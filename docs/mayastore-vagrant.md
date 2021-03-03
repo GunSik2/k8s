@@ -3,7 +3,7 @@
 
 ## 환경
 - Worker 노드의 cpu core 4 로 조정
-- 디스크 추가
+- Worker 노드 디스크 3개 추가
 ```
 $ vagrant halt
 $ cat Vagrantfile
@@ -16,6 +16,9 @@ $ cat Vagrantfile
         v.name = "worker#{i}"
         v.memory = 2048
         v.cpus = 4
+      (0..3).each do |i|
+        workernode.vm.disk :disk, size: "5GB", name: "disk-#{i}"
+      end        
 $ vagrant up
 ```
 
