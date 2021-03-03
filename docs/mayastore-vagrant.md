@@ -2,6 +2,20 @@
 ## 개요
 
 ## 환경
+```
+$ vagrant halt
+$ cat Vagrantfile
+  NodeCount = 1
+
+  # Kubernetes Worker Nodes
+  (1..NodeCount).each do |i|
+    config.vm.define "worker#{i}" do |workernode|
+      workernode.vm.provider "virtualbox" do |v|
+        v.name = "worker#{i}"
+        v.memory = 2048
+        v.cpus = 4
+$ vagrant up
+```
 
 ## 설치
 
