@@ -2,7 +2,11 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+# "disks" was only added somewhere between 2.2.6 
+Vagrant.require_version ">= 2.2.6"
+
 ENV['VAGRANT_NO_PARALLEL'] = 'yes'
+ENV['VAGRANT_EXPERIMENTAL'] = 'disks'
 
 Vagrant.configure(2) do |config|
 
