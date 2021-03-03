@@ -5,14 +5,17 @@
 - Worker 노드 디스크 3개 추가
 
 ## 환경
-- Vagrant version 2.2.14 이상 (disk 추가를 위해 필요) 
+- Vagrant version 2.2.14 (disk 추가를 위해 v2.2.6 이상 필요) 
 
 ## 설치
 - Vagrant 설정 변경 및 적용
 ```
 $ vagrant halt
 $ cat Vagrantfile
+Vagrant.require_version ">= 2.2.6"
+ENV['VAGRANT_NO_PARALLEL'] = 'yes'
 ENV['VAGRANT_EXPERIMENTAL'] = 'disks'
+..
   NodeCount = 1
 
   # Kubernetes Worker Nodes
