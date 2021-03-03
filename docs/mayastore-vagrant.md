@@ -2,6 +2,8 @@
 ## 개요
 
 ## 환경
+- Worker 노드의 cpu core 4 로 조정
+- 디스크 추가
 ```
 $ vagrant halt
 $ cat Vagrantfile
