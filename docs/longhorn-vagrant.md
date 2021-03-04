@@ -12,6 +12,7 @@ curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bas
 
 
 ## 설치
+- 
 ```
 git clone https://github.com/longhorn/longhorn; 
 
@@ -22,6 +23,10 @@ kubectl -n longhorn-system get svc
 NAME                TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
 longhorn-backend    ClusterIP   10.100.142.127   <none>        9500/TCP   18s
 longhorn-frontend   ClusterIP   10.108.225.121   <none>        80/TCP     18s
+```
+- 설치 확인
+```
+kubectl get pods --namespace longhorn-system --watch
 ```
 
 ## 참고
