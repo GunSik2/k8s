@@ -29,6 +29,11 @@ longhorn-frontend   ClusterIP   10.108.225.121   <none>        80/TCP     18s
 kubectl get pods --namespace longhorn-system --watch
 ```
 
+## 삭제
+```
+helm uninstall longhorn ./longhorn/chart/ --namespace longhorn-system
+```
+
 ## 참고
 - https://longhorn.io/docs/0.8.0/install/requirements/
 - https://kubernetes.io/ko/docs/reference/kubectl/cheatsheet/
