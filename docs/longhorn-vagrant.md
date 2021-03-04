@@ -26,3 +26,4 @@ longhorn-frontend   ClusterIP   10.108.225.121   <none>        80/TCP     18s
 
 ## 참고
 - https://longhorn.io/docs/0.8.0/install/requirements/
+- https://kubernetes.io/ko/docs/reference/kubectl/cheatsheet/
