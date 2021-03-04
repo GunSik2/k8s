@@ -6,10 +6,12 @@
 - https://github.com/jeromeza/k8s_cka_vagrant
 
 ## 환경
-- Vagrant
 - Git
 - VirtualBox
-
+- Vagrant
+```
+vagrant plugin install vagrant-vbguest
+```
 
 ## 설치
 ```
