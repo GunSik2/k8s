@@ -25,7 +25,7 @@ ENV['VAGRANT_EXPERIMENTAL'] = 'disks'
         v.name = "worker#{i}"
         v.memory = 2048
         v.cpus = 4
-      (0..3).each do |i|
+      (0..1).each do |i|    # Root 포함 최대 4개 디스크 가능 
         workernode.vm.disk :disk, size: "5GB", name: "disk-#{i}"
       end        
 $ vagrant up
