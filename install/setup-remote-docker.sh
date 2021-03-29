@@ -20,7 +20,7 @@ yum install -y docker-ce
 
 cat > /etc/docker/daemon.json <<EOF
 {
-  "hosts": ["unix:///var/run/docker.sock", "tcp://0.0.0.0:2376"],
+  "hosts": ["unix:///var/run/docker.sock", "tcp://0.0.0.0"],
   "exec-opts": ["native.cgroupdriver=systemd"],
   "log-driver": "json-file",
   "log-opts": {
