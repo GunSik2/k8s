@@ -20,7 +20,7 @@ yum install -y docker-ce
 
 cat > /etc/docker/daemon.json <<EOF
 {
-  "hosts": ["unix:///var/run/docker.sock", "tcp://0.0.0.0"],
+  "hosts": ["tcp://0.0.0.0:2375", "unix:///var/run/docker.sock"],
   "exec-opts": ["native.cgroupdriver=systemd"],
   "log-driver": "json-file",
   "log-opts": {
@@ -31,6 +31,12 @@ cat > /etc/docker/daemon.json <<EOF
     "overlay2.override_kernel_check=true"
   ]
 }
+EOF
+
+cat > /etc/systemd/system/docker.service.d/override.conf <<EOF
+[Service]
+ ExecStart=
+ ExecStart=/usr/bin/dockerd
 EOF
 
 mkdir -p /etc/systemd/system/docker.service.d
