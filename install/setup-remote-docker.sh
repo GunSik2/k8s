@@ -2,6 +2,13 @@
 # script that runs 
 # https://kubernetes.io/docs/setup/production-environment/container-runtime
 
+# INSTALL REQUIRED PACAKAGES #
+yum install -y vim git bash-completion
+
+# DISABLE SWAP ON NODES #
+sed -i 's/^\//#/' /etc/fstab
+swapoff -a
+
 yum install -y vim yum-utils device-mapper-persistent-data lvm2
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
