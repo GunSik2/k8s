@@ -1,0 +1,21 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+ENV['VAGRANT_NO_PARALLEL'] = 'yes'
+
+Vagrant.configure(2) do |config|
+
+  # Docker file
+  config.vm.define "control" do |control|
+    control.vm.box = "centos/7"
+    control.vm.hostname = "control.example.com"
+    control.vm.network "private_network", ip: "192.168.4.210"
+    control.vm.provider "virtualbox" do |v|
+      v.name = "docker"
+      v.memory = 2048
+      v.cpus = 2
+    end
+    control.vm.provision "shell", path: "https://raw.githubusercontent.com/GunSik2/k8s/main/install/setup-remote-docker.sh"
+  end
+
+end
