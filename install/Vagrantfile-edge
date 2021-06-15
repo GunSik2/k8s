@@ -1,0 +1,42 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+ENV['VAGRANT_NO_PARALLEL'] = 'yes'
+
+Vagrant.configure(2) do |config|
+
+  # Rancher Server
+  config.vm.define "rancher" do |rancher|
+    rancher.vm.box = "centos/7"
+    rancher.vm.hostname = "rancher.example.com"
+    rancher.vm.network "private_network", ip: "192.168.4.210"
+    control.vm.provider "virtualbox" do |v|
+      v.name = "control"
+      v.memory = 2048
+      v.cpus = 2
+    end
+    control.vm.provision "shell", path: "prereqs.sh"
+    control.vm.provision "shell", path: "https://raw.githubusercontent.com/sandervanvugt/cka/master/setup-docker.sh"
+    control.vm.provision "shell", path: "https://raw.githubusercontent.com/sandervanvugt/cka/master/setup-kubetools.sh"
+  end
+
+
+  NodeCount = 1
+  # Kubernetes Worker Nodes
+  (1..NodeCount).each do |i|
+    config.vm.define "worker#{i}" do |workernode|
+      workernode.vm.box = "centos/7"
+      workernode.vm.hostname = "worker#{i}.example.com"
+      workernode.vm.network "private_network", ip: "192.168.4.21#{i}"
+      workernode.vm.provider "virtualbox" do |v|
+        v.name = "worker#{i}"
+        v.memory = 2048
+        v.cpus = 2
+      end
+      workernode.vm.provision "shell", path: "prereqs.sh"
+      workernode.vm.provision "shell", path: "https://raw.githubusercontent.com/sandervanvugt/cka/master/setup-docker.sh"
+      workernode.vm.provision "shell", path: "https://raw.githubusercontent.com/sandervanvugt/cka/master/setup-kubetools.sh"
+    end
+  end
+
+end
