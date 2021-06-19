@@ -48,5 +48,9 @@ rpik3s
 ```
 curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.20.4+k3s1 sh -
 ```
+- 삭제
+```
+/usr/local/bin/k3s-uninstall.sh
+```
 ## 참고
 - 설치절차: https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi
