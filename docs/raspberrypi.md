@@ -39,8 +39,12 @@ ssh ubuntu@<ip>  # 기본 password: ubuntu
 ```
 # vi /boot/firmware/cmdline.txt
 cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1  # 라인에 추가
+
+# vi hostname
+rpik3s
 ```
-- 설치
+- 재부팅
+- k3s 설치
 ```
 curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.20.4+k3s1 sh -
 ```
