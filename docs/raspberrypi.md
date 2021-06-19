@@ -24,7 +24,7 @@ wifis:
 ```
 - Raspberry Pi 부팅 
   - SD 카드 삽입후 부팅: 
-  - 원격 접속 IP 확인
+  - 원격 접속 IP 확인 
 ```
 arp -a | findstr b8-27-eb   # Raspberry 3 
 arp -a | findstr dc-a6-32   # Raspberry 4 
@@ -36,6 +36,3 @@ ssh ubuntu@<ip>  # 기본 password: ubuntu
 
 ## 참고
 - 설치절차: https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi
-## SD 카트 OS 설치
-- 
-- https://www.raspberrypi.org/software/
