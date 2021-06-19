@@ -1,4 +1,4 @@
-# Raseberry Pi 와 노트북 연결
+# Raseberry Pi + Ubuntu 20.04 + K3S
 
 ## 사용툴
 - Raspberry Pi Imager : https://www.raspberrypi.org/software/
@@ -34,5 +34,15 @@ arp -a | findstr dc-a6-32   # Raspberry 4
 ssh ubuntu@<ip>  # 기본 password: ubuntu 
 ```
 
+## K8S 설치
+- 설정 변경
+```
+# vi /boot/firmware/cmdline.txt
+cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1  # 라인에 추가
+```
+- 설치
+```
+curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.20.4+k3s1 sh -
+```
 ## 참고
 - 설치절차: https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi
