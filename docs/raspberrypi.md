@@ -8,11 +8,11 @@
 ## 설치 절차
 ### SD 카드 준비
 - Raspberry Pi Imager 설치 후 실행
-  > SD 카드에 OS 설치
-  > OS : Ohter General Purpose OS > Ubuntu 20.04.2 LTS for arm64 
+  - SD 카드에 OS 설치
+  - OS : Ohter General Purpose OS > Ubuntu 20.04.2 LTS for arm64 
 - Wi-Fi 설정
-  > SD 카드 마운트 후 파일 설정
-  > network-config
+  - SD 카드 마운트 후 파일 설정
+  - network-config
 ```
 wifis:
   wlan0:
@@ -23,11 +23,15 @@ wifis:
         password: "***"
 ```
 - Raspberry Pi 부팅 
-  > SD 카드 삽입후 부팅
-  > 원격 접속 IP 확인
+  - SD 카드 삽입후 부팅: 
+  - 원격 접속 IP 확인
 ```
 arp -a | findstr b8-27-eb   # Raspberry 3 
 arp -a | findstr dc-a6-32   # Raspberry 4 
+```
+- Raspberry 접속
+```
+ssh ubuntu@<ip>  # 기본 password: ubuntu 
 ```
 
 ## 참고
