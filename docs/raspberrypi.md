@@ -61,9 +61,19 @@ curl --insecure -sfL https://14.49.44.246:8443/v3/import/x..sdfjslkj.yaml | kube
 ```
 
 ## Tool
+- kubeconfig
+```
+mkdir -p $HOME/.kube/k3s 
+touch $HOME/.kube/k3s/config
+chmod 600 $HOME/.kube/k3s/config
+
+cat /etc/rancher/k3s/k3s.yaml > $HOME/.kube/k3s/config
+export KUBECONFIG=$HOME/.kube/k3s/config
+```
 - k9s
 ```
 snap install k9s
+k9s
 ```
 
 ## 참고
