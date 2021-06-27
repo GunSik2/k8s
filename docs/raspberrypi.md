@@ -34,7 +34,7 @@ arp -a | findstr dc-a6-32   # Raspberry 4
 ssh ubuntu@<ip>  # 기본 password: ubuntu 
 ```
 
-## K8S 설치
+## K3S 설치
 - 설정 변경
 ```
 # vi /boot/firmware/cmdline.txt
@@ -51,6 +51,13 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.20.4+k3s1 sh -
 - 삭제
 ```
 /usr/local/bin/k3s-uninstall.sh
+```
+
+## Fleet Agent 설치
+- Rancher 서버에 K3s 등록 : Global > Add Cluster > Other Cluster > Create
+- K3s 실행
+```
+curl --insecure -sfL https://14.49.44.246:8443/v3/import/x..sdfjslkj.yaml | kubectl apply -f -
 ```
 
 ## 참고
