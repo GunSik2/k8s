@@ -60,6 +60,12 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.20.4+k3s1 sh -
 curl --insecure -sfL https://14.49.44.246:8443/v3/import/x..sdfjslkj.yaml | kubectl apply -f -
 ```
 
+## Tool
+- k9s
+```
+snap install k9s
+```
+
 ## 참고
 - 설치절차: https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi
 - Wireguard+k3s: https://www.inovex.de/de/blog/how-to-set-up-a-k3s-cluster-on-wireguard/
