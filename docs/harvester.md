@@ -1,12 +1,11 @@
 # Harvester
 
 ## 설치 (VirtualBox 환경)
-
 Download and install the Virtualbox 6.x, click to create a new VM with the following configuration:
 - choose Type: Linux and Version: Other Linux(64-bit)
 - set memory size to a minimum of 8192MB
 - set disk size to a minimum of 200GB
-- clicking the Settings of the created VM and navigate to the System > Processor to set the CPU to a minimum of 4 cores, 
+- clicking the Settings of the created V- M and navigate to the System > Processor to set the CPU to a minimum of 4 cores, 
   and enable the PAE/NX option, and set the nested virtualization via terminal with:
  - VBoxManage modifyvm "$custom-name" --nested-hw-virt on
    ```
@@ -18,6 +17,13 @@ Download and install the Virtualbox 6.x, click to create a new VM with the follo
    
 - lastly, follow the ISO installation and install the Harvester to your VM.
 - optionally you can create more VMs to form a cluster.
+### VirtualBox 설정
+- Secondary Node
+  ![image](https://user-images.githubusercontent.com/11453229/123739450-a573c100-d8e1-11eb-96bb-cb35013d1879.png)
+  ![image](https://user-images.githubusercontent.com/11453229/123739478-aefd2900-d8e1-11eb-9224-3e0454bddd44.png)
+  ![image](https://user-images.githubusercontent.com/11453229/123739512-b9b7be00-d8e1-11eb-87c0-8010fa6ac52e.png)
+  ![image](https://user-images.githubusercontent.com/11453229/123739529-bf150880-d8e1-11eb-8a8a-c22db304ca24.png)
+
 
 ## 테스트 
 ### 이미지 등록 
