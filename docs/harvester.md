@@ -27,3 +27,4 @@ Download and install the Virtualbox 6.x, click to create a new VM with the follo
 - https://docs.harvesterhci.io/v0.2/
 - https://github.com/harvester/harvester/wiki/Setting-Up-Harvester-Development-Environment
 - https://www.suse.com/c/meet-harvester-an-hci-solution-for-the-edge-src/
+- https://docs.harvesterhci.io/v0.2/rancher/node-driver/
