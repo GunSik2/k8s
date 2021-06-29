@@ -21,7 +21,7 @@ Download and install the Virtualbox 6.x, click to create a new VM with the follo
 
 ### 가상서버 생성
 ![image](https://user-images.githubusercontent.com/11453229/123720464-2077b000-d8bf-11eb-86f5-a112da5ac519.png)
-
+- VirtualBox 6.1 업그레이드 후 해결. VirtualBox 6.1 부터 Intel Chip에 대한 중첩 가상화 지원 (6.0은 AMD 만 지원)
 
 ## 참고자료
 - https://docs.harvesterhci.io/v0.2/
