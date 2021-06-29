@@ -29,3 +29,4 @@ Download and install the Virtualbox 6.x, click to create a new VM with the follo
 - https://www.suse.com/c/meet-harvester-an-hci-solution-for-the-edge-src/
 - https://docs.harvesterhci.io/v0.2/rancher/node-driver/
 - [Kubevirt windows migration](https://kubevirt.io/2020/win_workload_in_k8s.html)
+- [Nested Virtualization in VirtualBox](https://ostechnix.com/how-to-enable-nested-virtualization-in-virtualbox/)
