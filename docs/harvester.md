@@ -14,6 +14,15 @@ Download and install the Virtualbox 6.x, click to create a new VM with the follo
 - lastly, follow the ISO installation and install the Harvester to your VM.
 - optionally you can create more VMs to form a cluster.
 
+## 테스트 
+### 이미지 등록 
+- URL: https://uec-images.ubuntu.com/releases/focal/release/ubuntu-20.04-server-cloudimg-amd64.img
+![image](https://user-images.githubusercontent.com/11453229/123719741-44d28d00-d8bd-11eb-8220-a2223a856751.png)
+
+### 가상서버 생성
+![image](https://user-images.githubusercontent.com/11453229/123720464-2077b000-d8bf-11eb-86f5-a112da5ac519.png)
+
+
 ## 참고자료
 - https://docs.harvesterhci.io/v0.2/
 - https://github.com/harvester/harvester/wiki/Setting-Up-Harvester-Development-Environment
