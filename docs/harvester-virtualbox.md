@@ -44,6 +44,10 @@ Download and install the Virtualbox 6.x, click to create a new VM with the follo
 
 ### Windows 가상서버 생성
 
+
+### wifi config
+sudo vi /k3os/system/config.yaml
+
 ## 참고자료
 - https://docs.harvesterhci.io/v0.2/
 - https://github.com/harvester/harvester/wiki/Setting-Up-Harvester-Development-Environment
