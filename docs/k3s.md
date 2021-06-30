@@ -1,5 +1,29 @@
 # K3S 
 
+## 개요
+- 경량화한 Kubernetes 
+- Production ready, easy to install, half the memory, all in a binary less than 100 MB
+- It has minimal to no OS dependencies (just a sane kernel and cgroup mounts needed)
+- K3S 패키지에 포함된 기술 :
+  * [Containerd](https://containerd.io/) & [runc](https://github.com/opencontainers/runc)
+  * [Flannel](https://github.com/coreos/flannel) for CNI
+  * [CoreDNS](https://coredns.io/)
+  * [Metrics Server](https://github.com/kubernetes-sigs/metrics-server)
+  * [Traefik](https://containo.us/traefik/) for ingress
+  * [Klipper-lb](https://github.com/k3s-io/klipper-lb) as an embedded service loadbalancer provider
+  * [Kube-router](https://www.kube-router.io/) for network policy
+  * [Helm-controller](https://github.com/k3s-io/helm-controller) to allow for CRD-driven deployment of helm manifests
+  * [Kine](https://github.com/k3s-io/kine) as a datastore shim that allows etcd to be replaced with other databases
+  * [Local-path-provisioner](https://github.com/rancher/local-path-provisioner) for provisioning volumes using local storage
+  * [Host utilities](https://github.com/k3s-io/k3s-root) such as iptables/nftables, ebtables, ethtool, & socat
+
+## 아키텍처
+- Single-server Setup with an Embedded DB
+![image](https://user-images.githubusercontent.com/11453229/123926517-e8f42b00-d9c6-11eb-99b2-2629a9418cf8.png)
+
+- High-Availability K3s Server with an External DB
+![image](https://user-images.githubusercontent.com/11453229/123926607-ff01eb80-d9c6-11eb-9c61-35a0e53491f1.png)
+
 ## Install
 - 최신 안정 버전 설치
 ```
@@ -17,6 +41,23 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.20.4+k3s1 sh -
 curl -sfL https://get.k3s.io | K3S_URL=https://myserver:6443 K3S_TOKEN=mynodetoken sh -
 ```
 
+## Cluster Access
+```
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+kubectl get pods --all-namespaces
+helm ls --all-namespaces
+```
+## Upgrades
+- Install Script 이용한 업그레이드
+```
+curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=vX.Y.Z-rc1 sh -
+```
+
+## Backup and Restore
+## Volumes and Storage
+## Networking
+## Security
+
 ## 참고자료
-- https://rancher.com/docs/k3s/latest/en/quick-start/
+- https://rancher.com/docs/k3s/latest/en/
 - https://github.com/k3s-io/k3s/blob/master/README.md
