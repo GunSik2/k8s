@@ -12,3 +12,6 @@ k3os:
   - name: Crossent_5G
     passphrase: crossent
 ```
+
+## 참고자료
+- [k3os 설정](https://github.com/rancher/k3os#configuration-reference)
