@@ -19,3 +19,4 @@ curl -sfL https://get.k3s.io | K3S_URL=https://myserver:6443 K3S_TOKEN=mynodetok
 
 ## 참고자료
 - https://rancher.com/docs/k3s/latest/en/quick-start/
+- https://github.com/k3s-io/k3s/blob/master/README.md
