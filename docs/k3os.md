@@ -44,7 +44,8 @@ k3os:
 ```
 # ip a | grep wlan0
 3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
-
+    inet 192.168.0.48/24 brd 192.168.0.255 scope global wlan0
+    
 # connmanctl technologies
 /net/connman/technology/wifi
   Name = WiFi
