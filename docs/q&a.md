@@ -16,7 +16,15 @@ Software installation via Alpine's apk is not supported.
 - [Rancher Harvester Node Driver](https://docs.harvesterhci.io/v0.2/rancher/node-driver/)
 - [Harvester Network](https://docs.harvesterhci.io/v0.2/harvester-network/)
 
-### 네트워크
+### 네트워크 구성
+- 기본 관리 네트워크는 첫번째 eth0 를 사용하며 masquerade 모드로 동작, 내부 클러스터에서 접속 가능하며, 외부에서 접속은 불가
+- VM 접속 네트워크는 별도의 네트워크 (eth1, wlan0)를 설정하여 사용하며 VLAN 구성함
+- VLAN 활성화 : Harvester > Settings > vlan > Enable & Default Physical Network 을 별도 네트워크로 지정  (예: wlan0)
+- 노드 VLAN 기본 NIC 설정 : Harvester > Hosts >  edit config > Network > vlan 에 대한 기본 NIC 을 별도 네트워크로 설정 변경 (예: wlan0)
+- 테넌트 VLAN 생성 :  Harvester > Networks > Create > Name: vlan100, Vlan ID: 100
+- VM 생성 : Harvester > Virtual Machines > Create > Basics / Networks { Network: vlan100 } / Advanced Options { Check "Install guest agent" option }
+
+### 네트워크 개념
 - Harvester 는 management network 와 VLAN 을 지원
 - 관리 네트워크는 flannel 이용하여 구현(masquerade 모드로 동작)되었고, 내부 네트워크로 VM 관리망은 클러스터 노드나 Pod 내에서 접근 가능
 - VLAN 네트워크는 multus와 bridge CNI 플러그인을 이용하여 VLAN을 구현함
@@ -28,7 +36,6 @@ Software installation via Alpine's apk is not supported.
 - Harvester 클러스터 외부에서 바로 접끈 가능하려면 NodePort 서비스나 LoadBalancer 서비스 생성 필요
 
 
-
 ### Rancher 활성화 
 - Harveseter > Settings > Enalbe Rancher 활성화 후 Harvester 오른쪽 상단 Rancher 메뉴 이동
 ### Harvester Driver 이용한 K8S 배포
@@ -38,4 +45,6 @@ Software installation via Alpine's apk is not supported.
 ## K3S
 - traffik & klipper-lb 구조
 
+### 참고
+- [Harvester Network](https://docs.harvesterhci.io/v0.2/harvester-network/)
 
