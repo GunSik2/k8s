@@ -10,5 +10,18 @@ From the README.md (emphasis mine):
 
 Software installation via Alpine's apk is not supported.
 
+## Harvester
+- [Harvester VM with Bridged Network](https://www.belgai.de/blog/harvester/harvester_bridge_network/)
+- [Harvester Beta Features](https://community.suse.com/posts/announcing-harvester-beta-availability)
+- [Rancher Harvester Node Driver](https://docs.harvesterhci.io/v0.2/rancher/node-driver/)
+
+### Rancher 활성화 
+- Harveseter > Settings > Enalbe Rancher 활성화 후 Harvester 오른쪽 상단 Rancher 메뉴 이동
+### Harvester Driver 이용한 K8S 배포
+- Rancher > Add Cluster > Harvester 에서 등록
+
+### Rancher 
 ## K3S
 - traffik & klipper-lb 구조
+
+
