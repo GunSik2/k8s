@@ -7,6 +7,10 @@
 # cat /var/lib/rancher/k3os/config.yaml 
 hostname: vmops
 k3os:
+  k3sArgs:
+  ..
+  - eth0
+  - wlan0
   ...
   wifi:
   - name: Crossent_5G
