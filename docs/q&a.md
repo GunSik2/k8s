@@ -22,7 +22,28 @@ Software installation via Alpine's apk is not supported.
 - VLAN 활성화 : Harvester > Settings > vlan > Enable & Default Physical Network 을 별도 네트워크로 지정  (예: wlan0)
 - 노드 VLAN 기본 NIC 설정 : Harvester > Hosts >  edit config > Network > vlan 에 대한 기본 NIC 을 별도 네트워크로 설정 변경 (예: wlan0)
 - 테넌트 VLAN 생성 :  Harvester > Networks > Create > Name: vlan100, Vlan ID: 100
-- VM 생성 : Harvester > Virtual Machines > Create > Basics / Networks { Network: vlan100 } / Advanced Options { Check "Install guest agent" option }
+- VM 생성 : Harvester > Virtual Machines > Create > 
+  - Basics 
+  - Networks : { Network: management Network } /  Add Network { Network: vlan100 } 
+  - Advanced Options : User Data
+  ```
+  #cloud-config
+  password: password
+  chpasswd: { expire: False}
+  ssh_pwauth: True
+  packages:
+    - qemu-guest-agent
+  ```
+  - Advanced Options : Network Data
+  ```
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp1s0:
+      dhcp4: true
+    enp2s0:
+      dhcp4: true
+  ```
 
 ### 네트워크 개념
 - Harvester 는 management network 와 VLAN 을 지원
