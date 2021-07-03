@@ -26,4 +26,5 @@ pause()
 
 ## 참고
 - https://ubuntu.com/tutorials/gpio-on-raspberry-pi#2-installing-gpio
-- https://gpiozero.readthedocs.io/en/stable/recipes.html#pin-numbering
+- https://gpiozero.readthedocs.io/en/stable/recipes.html#led
+
