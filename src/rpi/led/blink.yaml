@@ -6,5 +6,7 @@ spec:
   containers:
     - name: rpi-led-blink
       image: cgshome2/rpi-led-blink 
+      securityContext:
+        privileged: true      
   nodeSelector:
     kubernetes.io/arch: arm64
