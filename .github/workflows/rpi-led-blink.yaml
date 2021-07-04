@@ -49,7 +49,7 @@ jobs:
           
       - name: Build
         run: |
-          docker build --push \ # will run buildx
+          docker buildx build --push \ # will run buildx
           --tag cgshome2/rpi-led-blink:latest \
           --platform linux/amd64,linux/arm/v7,linux/arm64 .
 
