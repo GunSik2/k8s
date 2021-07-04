@@ -38,18 +38,17 @@ jobs:
         uses: docker/setup-qemu-action@v1
         
       - name: Set up Docker Buildx
-        id: buildx
         uses: docker/setup-buildx-action@v1
-        with:
-          install: true
 
       - name: Inspect builder
         run: |
           echo Platforms: ${{ steps.buildx.outputs.platforms }}
-          
-      - name: Build
-        run: |
-          docker buildx build --push \ # will run buildx
-          --tag cgshome2/rpi-led-blink:latest \
-          --platform linux/amd64,linux/arm/v7,linux/arm64 .
+
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: cgshome2/rpi-led-blink:latest
+          platforms: linux/amd64,linux/arm/v7,linux/arm64
 
