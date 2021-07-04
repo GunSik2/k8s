@@ -12,7 +12,7 @@ sudo reboot
 - GPIO 연결 : 
   - LED 짧은 라인 GROUND 연결
   - LBE 긴 라인 저항 연결 및 GPIO17 연결
-- 코드 테스트
+- 코드 테스트 (blink.py)
 ```
 from gpiozero import LED
 from signal import pause
@@ -25,6 +25,42 @@ pause()
 ```
 
 ## PI Deployment 배포
+- Dockerfile
+```
+FROM python:3
+
+ADD blink.py /
+
+RUN pip install gpiozero
+
+CMD [ "python3" , "./blink.py" ]
+```
+- Build
+```
+docker buildx build --push --platform linux/amd64,linux/arm64 -t cgshome2/rpi-led-blink .
+```
+- Deploy
+```
+$ cat blink.yml
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rpi-led-blink
+spec:
+  containers:
+    - name: rpi-led-blink
+      image: cgshome2/rpi-led-blink 
+      securityContext:
+        privileged: true
+  nodeSelector:
+    kubernetes.io/arch: arm64
+---
+
+$ kubectl apply -f blnik.yml
+```
+
+
 ## 에러 조치
 ## standard_init_linux.go:219: exec user process caused: exec format error 
 - Docker 빌드시 arm64 기반 빌드 필요. buildx 이용한 멀티 플랫폼 빌드 지원 필요
