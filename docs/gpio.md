@@ -31,6 +31,7 @@ pause()
 - Docker 20 이상에 buildx 기본 설치됨 (참고 [vagrant 환경](https://github.com/GunSik2/k8s/blob/main/install/Vagrantfile-ubuntu20.04)
 - 멀티 플랫폼 빌드 실행
 ```
+docker run --privileged --rm tonistiigi/binfmt --install arm64  # emulator 1회 설치 필요
 docker buildx create --use
 docker buildx build --push --platform linux/amd64,linux/arm64 -t cgshome2/rpi-led-blink .
 ```
@@ -43,3 +44,4 @@ docker buildx build --push --platform linux/amd64,linux/arm64 -t cgshome2/rpi-le
 - https://gpiozero.readthedocs.io/en/stable/recipes.html#led
 - https://www.slideshare.net/ssuserc5886a/running-k3s-on-raspberry-pi
 - [Multi-arch build and images, the simple way](https://www.docker.com/blog/multi-arch-build-and-images-the-simple-way/)
+- [error in python3.x pip install via qemu for arm64](https://github.com/docker/buildx/issues/493)
