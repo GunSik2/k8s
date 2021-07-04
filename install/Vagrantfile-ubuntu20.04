@@ -10,5 +10,7 @@ Vagrant.configure(2) do |config|
       v.memory = 2048
       v.cpus = 2
     end	
+    #control.vm.provision "shell", path: "curl https://releases.rancher.com/install-docker/20.10.sh | sh"
+    
   end
 end  
