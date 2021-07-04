@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample
+spec:
+  containers:
+    - name: sample
+      image: cgshome2/rpi-led-blink 
+      securityContext:
+        privileged: true
+  nodeSelector:
+    kubernetes.io/arch: arm
