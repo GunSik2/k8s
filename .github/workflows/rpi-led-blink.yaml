@@ -23,7 +23,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      working-directory: ./src/led/blink
+      working-directory: ./src/rpi/led
     steps:
       - name: checkout 
         uses: actions/checkout@v2
