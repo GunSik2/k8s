@@ -9,4 +9,4 @@ spec:
       securityContext:
         privileged: true
   nodeSelector:
-    kubernetes.io/arch: arm
+    kubernetes.io/arch: arm64
