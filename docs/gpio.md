@@ -1,4 +1,4 @@
-# Rasberry Pi with Ubuntu GPIO 
+# Rasberry Pi with Ubuntu GPIO + K3s
 
 ## 사전작업
 Prepare [raseberrypi](raspberrypi.md)
@@ -24,7 +24,24 @@ red.blink()
 pause()
 ```
 
+```
+import RPi.GPIO as GPIO
+import time
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(17,GPIO.OUT)
+
+while True:
+  GPIO.output(17,True)
+  time.sleep(1)
+  GPIO.output(17,False)
+  time.sleep(1)
+
+GPIO.cleanup()
+
+```
+
+
 ## 참고
 - https://ubuntu.com/tutorials/gpio-on-raspberry-pi#2-installing-gpio
 - https://gpiozero.readthedocs.io/en/stable/recipes.html#led
-
+- https://www.slideshare.net/ssuserc5886a/running-k3s-on-raspberry-pi
