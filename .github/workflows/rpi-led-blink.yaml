@@ -8,16 +8,13 @@ on:
     branches:
     - main
 
-defaults:
-  run:
-    working-directory: ./src/rpi/blink
-    
+
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
     steps:
       - name: echo a string
-        run: echo "Hello, world!"
+        run: echo Hello, world!
       - name: multiline script
         run: |
           git --version
@@ -46,11 +43,7 @@ jobs:
 
       - name: Inspect builder
         run: |
-          echo "Name:      ${{ steps.buildx.outputs.name }}"
-          echo "Endpoint:  ${{ steps.buildx.outputs.endpoint }}"
-          echo "Status:    ${{ steps.buildx.outputs.status }}"
-          echo "Flags:     ${{ steps.buildx.outputs.flags }}"
-          echo "Platforms: ${{ steps.buildx.outputs.platforms }}"
+          echo Platforms: ${{ steps.buildx.outputs.platforms }}
           
       - name: Build
         run: |
