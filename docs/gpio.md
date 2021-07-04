@@ -24,20 +24,18 @@ red.blink()
 pause()
 ```
 
+## PI Deployment 배포
+## 에러 조치
+## standard_init_linux.go:219: exec user process caused: exec format error 
+- Docker 빌드시 arm64 기반 빌드 필요. buildx 이용한 멀티 플랫폼 빌드 지원 필요
+- Docker 1.9 이상 환경, amd64 Linux 환경 가정
 ```
-import RPi.GPIO as GPIO
-import time
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(17,GPIO.OUT)
-
-while True:
-  GPIO.output(17,True)
-  time.sleep(1)
-  GPIO.output(17,False)
-  time.sleep(1)
-
-GPIO.cleanup()
-
+LATEST=v0.5.1
+wget https://github.com/docker/buildx/releases/download/$LATEST/buildx-$LATEST.linux-amd64
+chmod a+x buildx-$LATEST.linux-amd64
+mkdir -p ~/.docker/cli-plugins
+mv buildx-$LATEST.linux-amd64 ~/.docker/cli-plugins/docker-buildx
+DOCKER_BUILD_KIT=1 DOCKER_CLI_EXPERIMENTAL=enabled docker buildx -help
 ```
 
 
@@ -45,3 +43,4 @@ GPIO.cleanup()
 - https://ubuntu.com/tutorials/gpio-on-raspberry-pi#2-installing-gpio
 - https://gpiozero.readthedocs.io/en/stable/recipes.html#led
 - https://www.slideshare.net/ssuserc5886a/running-k3s-on-raspberry-pi
+- [Multi-arch build and images, the simple way](https://www.docker.com/blog/multi-arch-build-and-images-the-simple-way/)
