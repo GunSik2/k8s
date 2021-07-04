@@ -28,15 +28,14 @@ pause()
 ## 에러 조치
 ## standard_init_linux.go:219: exec user process caused: exec format error 
 - Docker 빌드시 arm64 기반 빌드 필요. buildx 이용한 멀티 플랫폼 빌드 지원 필요
-- Docker 1.9 이상 환경, amd64 Linux 환경 가정
+- Docker 20 이상에 buildx 기본 설치됨 (참고 [vagrant 환경](https://github.com/GunSik2/k8s/blob/main/install/Vagrantfile-ubuntu20.04)
+- 멀티 플랫폼 빌드 실행
 ```
-LATEST=v0.5.1
-wget https://github.com/docker/buildx/releases/download/$LATEST/buildx-$LATEST.linux-amd64
-chmod a+x buildx-$LATEST.linux-amd64
-mkdir -p ~/.docker/cli-plugins
-mv buildx-$LATEST.linux-amd64 ~/.docker/cli-plugins/docker-buildx
-DOCKER_BUILD_KIT=1 DOCKER_CLI_EXPERIMENTAL=enabled docker buildx -help
+docker buildx create --use
+docker buildx build --push --platform linux/amd64,linux/arm64 -t cgshome2/rpi-led-blink .
 ```
+- 04 Docker 1.9 이상 환경, amd64 Linux 환경 가정
+
 
 
 ## 참고
