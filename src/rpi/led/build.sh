@@ -1,5 +1,1 @@
-docker build -t cgshome2/rpi-led-blink .
-
-#docker run --privileged cgshome2/rpi-led-blink
-
-docker push cgshome2/rpi-led-blink
+docker buildx build --push --platform linux/amd64,linux/arm64 -t cgshome2/rpi-led-blink .
