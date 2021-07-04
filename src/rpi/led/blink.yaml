@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: sample
+  name: blink
 spec:
   containers:
-    - name: sample
+    - name: blink
       image: cgshome2/rpi-led-blink 
       securityContext:
         privileged: true
