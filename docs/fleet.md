@@ -14,3 +14,7 @@ spec:
   paths:
   - single-cluster/helm
 ```
+
+## 참고
+- https://cloud.google.com/kubernetes-engine/docs/tutorials/guestbook?hl=ko
+- https://github.com/GunSik2/kubernetes-engine-samples/tree/master/guestbook
