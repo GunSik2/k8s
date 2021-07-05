@@ -3,10 +3,10 @@ name: cgshome2/rpi-led-blink
 on:
   push:
     branches: 
-    - main
+    - prd
   pull_request:
     branches:
-    - main
+    - prd
 
 jobs:         
   build:
