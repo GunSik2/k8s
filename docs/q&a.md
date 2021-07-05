@@ -45,6 +45,10 @@ Software installation via Alpine's apk is not supported.
       dhcp4: true
   ```
 
+- 별도 네트워크가 없는 경우 호스트 네트워크로 VLAN 생성 가능
+- 테넌트 VLAN 생성 :  Harvester > Networks > Create > Name: host-newtork, Vlan ID: 1
+
+
 ### 네트워크 개념
 - Harvester 는 management network 와 VLAN 을 지원
 - 관리 네트워크는 flannel 이용하여 구현(masquerade 모드로 동작)되었고, 내부 네트워크로 VM 관리망은 클러스터 노드나 Pod 내에서 접근 가능
@@ -60,6 +64,7 @@ Software installation via Alpine's apk is not supported.
 ### Rancher 활성화 
 - Harveseter > Settings > Enalbe Rancher 활성화 후 Harvester 오른쪽 상단 Rancher 메뉴 이동
 ### Harvester Driver 이용한 K8S 배포
+- Rancher > 오른쪽 상단 > Node Template > Add Template > Harvester -  Internal Harvester - host-network(1)
 - Rancher > Add Cluster > Harvester 에서 등록
 
 ### Rancher 
