@@ -73,4 +73,6 @@ Software installation via Alpine's apk is not supported.
 
 ### 참고
 - [Harvester Network](https://docs.harvesterhci.io/v0.2/harvester-network/)
+- [Linux vlan 구성 사례](https://onecellboy.tistory.com/278)
+- [cloudinit 설정](https://cloudinit.readthedocs.io/en/latest/topics/network-config-format-v1.html)
 
