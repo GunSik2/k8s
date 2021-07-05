@@ -9,6 +9,16 @@ sudo ip addr add 10.0.0.1/24 dev eth1.100
 ```
 
 ## Cloud-init 구성
+- Password Seeting
+```
+#cloud-config
+password: password
+chpasswd: { expire: False}
+ssh_pwauth: True
+packages:
+  - qemu-guest-agent
+```
+- Network setting
 ```
 version: 2
 renderer: networkd
@@ -21,5 +31,5 @@ vlans:
   enp2s0.100:
     id: 100
     link: enp2s0
-	address: 10.0.0.2
+	address: 10.0.0.10
 ```
