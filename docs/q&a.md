@@ -42,7 +42,12 @@ Software installation via Alpine's apk is not supported.
     enp1s0:
       dhcp4: true
     enp2s0:
-      dhcp4: true
+      dhcp4: false  
+  vlans:
+    en-intra:
+      id: 100
+      link: enp2s0
+      address: 10.0.0.2         
   ```
 
 - 별도 네트워크가 없는 경우 호스트 네트워크로 VLAN 생성 가능
@@ -74,5 +79,5 @@ Software installation via Alpine's apk is not supported.
 ### 참고
 - [Harvester Network](https://docs.harvesterhci.io/v0.2/harvester-network/)
 - [Linux vlan 구성 사례](https://onecellboy.tistory.com/278)
-- [cloudinit 설정](https://cloudinit.readthedocs.io/en/latest/topics/network-config-format-v1.html)
+- [cloudinit 설정](https://cloudinit.readthedocs.io/en/latest/topics/network-config-format-v2.html)
 
