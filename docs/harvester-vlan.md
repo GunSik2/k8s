@@ -16,7 +16,6 @@ ip link set dev eth1 up
 ## Cloud-init 구성
 - Password Seeting
 ```
-#cloud-config
 password: password
 chpasswd: { expire: False}
 ssh_pwauth: True
@@ -25,16 +24,18 @@ packages:
 ```
 - Network setting
 ```
-version: 2
-renderer: networkd
-ethernets:
-  enp1s0:
-    dhcp4: true
-  enp2s0:
-    dhcp4: false
-vlans:
-  enp2s0.100:
-    id: 100
-    link: enp2s0
-	address: 10.0.0.10
+version: 1
+config:
+  - type: physical
+    name: enp1s0 
+    subnets:
+      - type: dhcp
+  - type: physical
+    name: enp2s0 
+    subnets:
+      - type: DHCP
 ```
+
+## 참고
+- https://docs.harvesterhci.io/v0.2/harvester-network/
+- https://benisnous.com/lets-learn-harvester/
