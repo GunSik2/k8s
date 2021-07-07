@@ -45,10 +45,9 @@
 
 ### 가상서버 생성 (host-network / bridge) : vlan 스위치 미구성 상태
   ![image](https://user-images.githubusercontent.com/11453229/124585317-1ee65300-de90-11eb-8a7e-ddce68727e40.png)
-  ![image](https://user-images.githubusercontent.com/11453229/124585656-77b5eb80-de90-11eb-9780-fc464546038e.png)
+  ![image](https://user-images.githubusercontent.com/11453229/124692983-8eeceb80-df19-11eb-844a-3bfcdce7dc7f.png)
   ![image](https://user-images.githubusercontent.com/11453229/124585450-43dac600-de90-11eb-8a5b-3c7b17c36072.png)
-  ![image](https://user-images.githubusercontent.com/11453229/124585542-59e88680-de90-11eb-9ce2-299789eb081b.png)
-
+  ![image](https://user-images.githubusercontent.com/11453229/124693010-9dd39e00-df19-11eb-8274-6c1a294aef7d.png)
 
 ### 가상서버 생성 (management Network / masqreade + host-network / bridge) : vlan 스위치 미구성 상태
 ![image](https://user-images.githubusercontent.com/11453229/124587030-227ad980-de92-11eb-9387-ab0727189da3.png)
