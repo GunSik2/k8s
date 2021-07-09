@@ -1,8 +1,5 @@
 # Jetson Nano 2G
 
-## 환경
-- 윈도우 환경 
-
 ## 설치
 ### SD 카드 이미지 설치 
 - 이미지([Jetson Nano 2GB Developer Kit SD Card Image](https://developer.nvidia.com/jetson-nano-2gb-sd-card-image)) 다운로드 및 설치
@@ -22,3 +19,7 @@
 ## 참고자료
 - https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-2gb-devkit
 - [ubuntu 20.04 업데이트](https://stackdata.com/upgrade-nvidia-jetson-nano-from-ubuntu-bionic-beaver-to-focal-fossa/)
+- [Jetson Community Projects](https://developer.nvidia.com/embedded/community/jetson-projects)
+- [Jetson Zoo](https://elinux.org/Jetson_Zoo)
+- [Jetson Developer Zone](https://developer.nvidia.com/embedded-computing)
+- [Jetson Support Forums](https://forums.developer.nvidia.com/c/agx-autonomous-machines/jetson-embedded-systems/70)
