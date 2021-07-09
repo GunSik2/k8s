@@ -44,7 +44,10 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.20.4+k3s1 sh -
   ```
   - Agent 노드 실행
   ```
-  curl -sfL https://get.k3s.io | K3S_URL=https://192.168.0.22:6443 K3S_TOKEN=K103b830abc20ad954152bb1836d7ba0ff12761a2a3f1e0b2b53dbca461fbb045b4::server:9755ec56d0bfe2000145289e55e50987 sh -
+  curl -sfL https://get.k3s.io |   INSTALL_K3S_VERSION=v1.20.4+k3s1 \
+  K3S_URL=https://192.168.0.22:6443 \
+  K3S_TOKEN=K103b830abc20ad954152bb1836d7ba0ff12761a2a3f1e0b2b53dbca461fbb045b4::server:9755ec56d0bfe2000145289e55e50987 \
+  sh -
   ```
 
 ## Cluster Access
@@ -63,7 +66,15 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=vX.Y.Z-rc1 sh -
 ## Volumes and Storage
 ## Networking
 ## Security
-
+## Uninstall
+- Server 삭제
+```
+/usr/local/bin/k3s-uninstall.sh  
+```
+- Agent 삭제
+```
+/usr/local/bin/k3s-agent-uninstall.sh
+```
 ## 참고자료
 - https://rancher.com/docs/k3s/latest/en/
 - https://github.com/k3s-io/k3s/blob/master/README.md
