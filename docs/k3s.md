@@ -37,9 +37,15 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.20.4+k3s1 sh -
   - Rancher K3S Downstream Clusters > Supported K3S Versions
   - https://rancher.com/support-maintenance-terms/all-supported-versions/rancher-v2.5.7/
 - Worker 추가 설치
-```
-curl -sfL https://get.k3s.io | K3S_URL=https://myserver:6443 K3S_TOKEN=mynodetoken sh -
-```
+  - Server 토큰 확인
+  ```
+  $ sudo cat /var/lib/rancher/k3s/server/node-token
+  K103b830abc20ad954152bb1836d7ba0ff12761a2a3f1e0b2b53dbca461fbb045b4::server:9755ec56d0bfe2000145289e55e50987
+  ```
+  - Agent 노드 실행
+  ```
+  curl -sfL https://get.k3s.io | K3S_URL=https://192.168.0.22:6443 K3S_TOKEN=K103b830abc20ad954152bb1836d7ba0ff12761a2a3f1e0b2b53dbca461fbb045b4::server:9755ec56d0bfe2000145289e55e50987 sh -
+  ```
 
 ## Cluster Access
 ```
