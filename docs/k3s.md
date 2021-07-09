@@ -42,14 +42,26 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.20.4+k3s1 sh -
   $ sudo cat /var/lib/rancher/k3s/server/node-token
   K103b830abc20ad954152bb1836d7ba0ff12761a2a3f1e0b2b53dbca461fbb045b4::server:9755ec56d0bfe2000145289e55e50987
   ```
-  - Agent 노드 실행
+  - Agent 노드 실행(Rasberry Pi)
   ```
   curl -sfL https://get.k3s.io |   INSTALL_K3S_VERSION=v1.20.4+k3s1 \
   K3S_URL=https://192.168.0.22:6443 \
   K3S_TOKEN=K103b830abc20ad954152bb1836d7ba0ff12761a2a3f1e0b2b53dbca461fbb045b4::server:9755ec56d0bfe2000145289e55e50987 \
   sh -
   ```
-
+  - Agent 노드 실행(Jetson) 
+    - k3s 기본 containerd 대신 docker 사용하도록 설정 (--docker)
+  ```
+  curl -sfL https://get.k3s.io |   INSTALL_K3S_VERSION=v1.20.4+k3s1 \
+  INSTALL_K3S_EXEC="--docker" \
+  K3S_URL=https://192.168.0.22:6443 \
+  K3S_TOKEN=K103b830abc20ad954152bb1836d7ba0ff12761a2a3f1e0b2b53dbca461fbb045b4::server:9755ec56d0bfe2000145289e55e50987 \
+  sh -
+  ```
+    - Docker container 확인
+  ```
+  sudo docker ps
+  ```
 ## Cluster Access
 ```
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
@@ -78,3 +90,4 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=vX.Y.Z-rc1 sh -
 ## 참고자료
 - https://rancher.com/docs/k3s/latest/en/
 - https://github.com/k3s-io/k3s/blob/master/README.md
+- https://rancher.com/docs/k3s/latest/en/advanced/#configuring-containerd
