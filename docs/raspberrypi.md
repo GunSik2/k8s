@@ -1,4 +1,4 @@
-# Raseberry Pi + Ubuntu 20.04 + K3S
+# Raseberry Pi + Ubuntu 20.04 
 
 ## 사용툴
 - Raspberry Pi Imager : https://www.raspberrypi.org/software/
@@ -40,7 +40,7 @@ ssh ubuntu@<ip>  # 기본 password: ubuntu
 # vi hostname
 rpik3s
 ```
-- Memory cgroup 활성화
+- Memory cgroup 활성화 : K3S 설치 사전 필수
 ```
 # vi /boot/firmware/cmdline.txt
 cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1  # 라인끝에 내용 추가
