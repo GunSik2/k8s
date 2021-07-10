@@ -1,8 +1,14 @@
 
 # Rancher Fleet
 
+## Fleet Agent 설치
+- Rancher 서버에 K3s 등록 : Global > Add Cluster > Other Cluster > Create
+- K3s 실행
+```
+curl --insecure -sfL https://14.49.44.246:8443/v3/import/x..sdfjslkj.yaml | kubectl apply -f -
+```
 
-## 배포 
+## Sample 배포 
 ```
 kind: GitRepo
 apiVersion: fleet.cattle.io/v1alpha1
