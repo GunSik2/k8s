@@ -12,7 +12,7 @@
   - OS : Ohter General Purpose OS > Ubuntu 20.04.2 LTS for arm64 
 - Wi-Fi 설정
   - SD 카드 마운트 후 파일 설정
-  - network-config
+  - /boot/firmware/network-config
 ```
 wifis:
   wlan0:
