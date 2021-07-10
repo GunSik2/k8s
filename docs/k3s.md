@@ -1,5 +1,4 @@
 # K3S 
-
 ## 개요
 - 경량화한 Kubernetes 
 - Production ready, easy to install, half the memory, all in a binary less than 100 MB
@@ -58,10 +57,16 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.20.4+k3s1 sh -
   K3S_TOKEN=K103b830abc20ad954152bb1836d7ba0ff12761a2a3f1e0b2b53dbca461fbb045b4::server:9755ec56d0bfe2000145289e55e50987 \
   sh -
   ```
-    - Docker container 확인
+    - Docker container 확인 
+      - container 리스트 확인 (containerd 사용시에는 리스트 목록이 없음)
   ```
-  sudo docker ps
+  # docker ps
+  CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+  8604b5d5062d        9be4f056f04b        "entry"             2 minutes ago       Up 2 minutes                            k8s_lb-port-443_svclb-traefik-vbssv_kube-system_bfc973d4-2b96-4a86-bff1-0e1ebbfd9fba_2
+  fea5b163ca34        9be4f056f04b        "entry"             2 minutes ago       Up 2 minutes                            k8s_lb-port-80_svclb-traefik-vbssv_kube-system_bfc973d4-2b96-4a86-bff1-0e1ebbfd9fba_2
+  b89809720ea3        rancher/pause:3.1   "/pause"            2 minutes ago       Up 2 minutes                            k8s_POD_svclb-traefik-vbssv_kube-system_bfc973d4-2b96-4a86-bff1-0e1ebbfd9fba_2
   ```
+  
 ## Cluster Access
 ```
 export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
