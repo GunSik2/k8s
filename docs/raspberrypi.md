@@ -34,39 +34,16 @@ arp -a | findstr dc-a6-32   # Raspberry 4
 ssh ubuntu@<ip>  # 기본 password: ubuntu 
 ```
 
-## K3S 설치
-- 설정 변경
+## 초기 환경 구성
+- Host명 변경
 ```
-# vi /boot/firmware/cmdline.txt
-cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1  # 라인에 추가
-
 # vi hostname
 rpik3s
 ```
-- 재부팅
-- k3s 설치
+- Memory cgroup 활성화
 ```
-curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.20.4+k3s1 sh -
-```
-- 삭제
-```
-/usr/local/bin/k3s-uninstall.sh
-```
-
-## Tool
-- kubeconfig
-```
-mkdir -p $HOME/.kube/k3s 
-touch $HOME/.kube/k3s/config
-chmod 600 $HOME/.kube/k3s/config
-
-cat /etc/rancher/k3s/k3s.yaml > $HOME/.kube/k3s/config
-export KUBECONFIG=$HOME/.kube/k3s/config
-```
-- k9s
-```
-snap install k9s
-k9s
+# vi /boot/firmware/cmdline.txt
+cgroup_enable=cpuset cgroup_enable=memory cgroup_memory=1  # 라인끝에 내용 추가
 ```
 
 ## 참고
