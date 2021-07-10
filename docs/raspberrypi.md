@@ -53,13 +53,6 @@ curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=v1.20.4+k3s1 sh -
 /usr/local/bin/k3s-uninstall.sh
 ```
 
-## Fleet Agent 설치
-- Rancher 서버에 K3s 등록 : Global > Add Cluster > Other Cluster > Create
-- K3s 실행
-```
-curl --insecure -sfL https://14.49.44.246:8443/v3/import/x..sdfjslkj.yaml | kubectl apply -f -
-```
-
 ## Tool
 - kubeconfig
 ```
