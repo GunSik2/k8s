@@ -38,6 +38,20 @@ $ sudo docker info | grep Runtime
  Default Runtime: nvidia
 ```
 
+### GPU 테스트
+- pull the TensorFlow 2.2 container image for L4T from NGC ([NVIDIA GPU Cloud](https://ngc.nvidia.com/catalog))
+```
+sudo docker pull nvcr.io/nvidia/l4t-tensorflow:r32.4.3-tf2.2-py3
+```
+- check if TensorFlow can access the GPU available on Jetson Nano
+```
+sudo docker run -it --rm --runtime nvidia \ 
+--network host \
+nvcr.io/nvidia/l4t-tensorflow:r32.4.3-tf2.2-py3 \
+python3
+> import tensorflow as tf
+> print(tf.__version__)
+```
 ### 메인 페이지
 - [Jetson Community Projects](https://developer.nvidia.com/embedded/community/jetson-projects)
 - [Jetson Zoo](https://elinux.org/Jetson_Zoo)
