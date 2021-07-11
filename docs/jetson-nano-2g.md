@@ -17,6 +17,26 @@
 - Optionally configure wireless networking
 - Select APP partition size. It is recommended to use the max size suggested
 - Create a swap file. It is recommended to create a swap file
+### GPU 활성화
+- config nvida default runtime 
+```
+$ vi /etc/docker/daemon.json 
+{
+    "default-runtime": "nvidia",
+    "runtimes": {
+        "nvidia": {
+            "path": "nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    }
+}
+```
+- 확인
+```
+$ sudo docker info | grep Runtime
+ Runtimes: nvidia runc
+ Default Runtime: nvidia
+```
 
 ### 메인 페이지
 - [Jetson Community Projects](https://developer.nvidia.com/embedded/community/jetson-projects)
