@@ -24,3 +24,6 @@ export PIPELINE_VERSION=1.6.0
 kubectl delete -k "github.com/kubeflow/pipelines/manifests/kustomize/env/platform-agnostic-pns?ref=$PIPELINE_VERSION"
 kubectl delete -k "github.com/kubeflow/pipelines/manifests/kustomize/cluster-scoped-resources?ref=$PIPELINE_VERSION"
 ```
+
+## Reference
+- https://www.kubeflow.org/docs/components/pipelines/installation/localcluster-deployment/
