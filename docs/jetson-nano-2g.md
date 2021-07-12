@@ -70,3 +70,4 @@ permissions=  # remove values of permissions
 
 ## 참고자료
 - [Jetson 설치 가이드](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-2gb-devkit)
+- [Jetson AI Certification](https://developer.nvidia.com/embedded/learn/jetson-ai-certification-programs)
