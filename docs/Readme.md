@@ -16,4 +16,5 @@
 - [Harvester on virtualbox 설치](/docs/harvester-virtualbox.md)
 - [Harvester on baremetal 설치](/docs/harvester-baremetal.md)
 - [Harvester vlan 구성](/docs/harvester-vlan.md)
-- [K3OS 설정](/
+- [K3OS 설정](/docs/k3os.md)
+
