@@ -24,14 +24,14 @@ You can then navigate the browser on your PC to the URL shown above (http://192.
 ## AI & DeepLarning 
 - Convolution (합성곱) 하나의 함수와 또 다른 함수를 반전 이동한 값을 곱하고, 구간 적분하여 새로운 함수를 만드는 수학 연산자
 - 
-## RseNet-18 ([Go](https://courses.nvidia.com/courses/course-v1:DLI+S-RX-02+V2/courseware/b2e02e999d9247eb8e33e893ca052206/26aa9f8bdaa948d9b068a8275c89e546/?child=first))
+### RseNet-18 ([Go](https://courses.nvidia.com/courses/course-v1:DLI+S-RX-02+V2/courseware/b2e02e999d9247eb8e33e893ca052206/26aa9f8bdaa948d9b068a8275c89e546/?child=first))
 - Residual Networks : 
   - 복수의 레이어를 스킵하는 단축 연결 블럭을 추가함으로서, 네트워크 효율성과 정확성이 증가됨
   - ResNet은 18 개 레이어부터 152 레이어 제시함. Nano는 18개 사용
 - Transfer Learning 
   - 1000 개 이미지 훈련된 모델을 이용하여 10개 클래스를 구분하는 시험 진행 
   - 마지막 18번째 레이어 출력값을 (512,1000) layer 에서 (512, 10)출력으로 변경
-
+### Thumbs Project
 
 ## 이미지 참고
 ### Convolution
