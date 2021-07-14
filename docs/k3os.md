@@ -146,12 +146,11 @@ iface lo inet loopback
 iface eth0 inet manual
 iface eth1 inet manual
 
-# The primary network interface
-auto br0
+auto br0  ## The primary network interface
 iface br0 inet static
 	address 192.168.217.170
 	netmask 255.255.255.0
-	network 192.168.217.0
+	inetwork 192.168.217.0
 	broadcast 192.168.217.255
 	gateway 192.168.217.1
 	# dns-* options are implemented by the resolvconf package, if installed
