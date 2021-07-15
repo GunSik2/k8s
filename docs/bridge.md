@@ -56,7 +56,9 @@ ip link set eth0 master br0
 # 물리 링크 IP 설정 br0 로 변경 설정
 ip addr del 192.168.10.25/24 dev eth0
 ip addr add 192.168.10.25/24 dev br0
-route add default gw 192.168.10.1 dev br0
+
+ip r add default 192.168.10.1/24 dev br0
+ip r add 192.168.10.1/24 via 192.168.10.1
 
 # 확인
 brctl show br0
@@ -134,3 +136,4 @@ port no	mac addr		is local?	ageing timer
 - https://developers.redhat.com/blog/2018/10/22/introduction-to-linux-interfaces-for-virtual-networking#vlan
 - https://linux-blog.anracom.com/2017/11/14/fun-with-veth-devices-linux-bridges-and-vlans-in-unnamed-linux-network-namespaces-iii/
 - https://linux-blog.anracom.com/2017/11/28/fun-with-veth-devices-linux-bridges-and-vlans-in-unnamed-linux-network-namespaces-vi/
+- https://www.lesstif.com/system-admin/ifconfig-route-linux-ip-71401706.html
