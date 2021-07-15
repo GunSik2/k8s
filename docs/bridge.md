@@ -57,8 +57,8 @@ ip link set eth0 master br0
 ip addr del 192.168.10.25/24 dev eth0
 ip addr add 192.168.10.25/24 dev br0
 
-ip r add default 192.168.10.1/24 dev br0
-ip r add 192.168.10.1/24 via 192.168.10.1
+ip r add default 192.168.10.0/24 dev br0
+ip r add 192.168.10.0/24 via 192.168.10.1
 
 # 확인
 brctl show br0
