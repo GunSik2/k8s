@@ -27,6 +27,40 @@ route add -net default gw $eth_gw
 #assign wlan0 to br0
 ip link set wlan0 master br0
 ```
+## 브릿지 구성 (eth0 를 br0에 연결하고, br0 에 veth peer 를 붙여 사용)
+```
+# Diagram
+#
+#           192.168.10.25/24   10.0.0.25/24
+#           /                 /  
+# eth0 -- br0 -- veth0 -- veth1
+#             +- veth2 - veth3
+#
+# 브릿지 생성
+ip link add br0 type bridge
+ip link set br0 up
+
+# veth 가상 링크 생성(Virtual Ethernet Devices) 
+ip link add veth0 type veth peer name veth1
+ip link set veth0 up
+ip link set veth1 up
+ip addr add 10.0.0.25/24 dev veth1
+
+# br0 에 가상 링크 (veth0) 연결
+ip link set veth0 master br0
+
+# br0 에 물리 링크 (eth0) 연결
+ip link set eth0 up
+ip link set eth0 master br0
+
+# 물리 링크 IP 설정 br0 로 변경 설정
+ip addr del 192.168.10.25/24 dev eth0
+ip addr add 192.168.10.25/24 dev br0
+route add default gw 192.168.10.1 dev br0
+
+# 확인
+brctl show br0
+```
 ## ubuntu 설정 구성
 ```
 $ sudo apt-get install bridge-utils
@@ -88,3 +122,4 @@ port no	mac addr		is local?	ageing timer
 ## 참고자료
 - https://www.sauru.so/blog/troubleshooting-w-linux-bridge/
 - https://www.hanewin.net/rpi/bridge.htm
+- https://itguava.tistory.com/46
