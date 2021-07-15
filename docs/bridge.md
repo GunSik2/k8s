@@ -123,3 +123,5 @@ port no	mac addr		is local?	ageing timer
 - https://www.sauru.so/blog/troubleshooting-w-linux-bridge/
 - https://www.hanewin.net/rpi/bridge.htm
 - https://itguava.tistory.com/46
+- https://developers.redhat.com/blog/2018/10/22/introduction-to-linux-interfaces-for-virtual-networking#vlan
+- https://linux-blog.anracom.com/2017/11/14/fun-with-veth-devices-linux-bridges-and-vlans-in-unnamed-linux-network-namespaces-iii/
