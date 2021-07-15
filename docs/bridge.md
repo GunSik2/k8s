@@ -126,6 +126,28 @@ port no	mac addr		is local?	ageing timer
   1	00:0c:29:fa:6c:ab	yes		   0.00
   2	00:b3:2c:14:3b:d9	yes		   0.00              
 ```
+## DHCP 
+```
+# vi /etc/default/isc-dhcp-server
+INTERFACESv4="veth3"
+
+# vi /etc/dhcp/dhcpd.conf
+option domain-name "example.org";
+option domain-name-servers 8.8.8.8;
+
+default-lease-time 600;
+max-lease-time 7200;
+
+authoritative;
+subnet 10.0.0.0 netmask 255.255.255.0 {
+  range 10.0.0.10 10.0.0.240;
+  option routers 10.0.0.1;
+  option subnet-mask 255.255.255.0;
+}
+
+# systemctl restart isc-dhcp-server
+# journalctl -u isc-dhcp-server
+```
 
 ## 참고자료
 - https://www.sauru.so/blog/troubleshooting-w-linux-bridge/
