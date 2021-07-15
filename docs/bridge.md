@@ -61,6 +61,14 @@ route add default gw 192.168.10.1 dev br0
 # 확인
 brctl show br0
 ```
+## VLAN 용 veth 구성
+```
+ip link add link vethx name vethx.10 type vlan id 10
+ip link add link vethx name vethx.20 type vlan id 20
+ip link set vethx up
+ip link set vethx.10 up
+ip link set vethx.20 up
+```
 ## ubuntu 설정 구성
 ```
 $ sudo apt-get install bridge-utils
@@ -125,3 +133,4 @@ port no	mac addr		is local?	ageing timer
 - https://itguava.tistory.com/46
 - https://developers.redhat.com/blog/2018/10/22/introduction-to-linux-interfaces-for-virtual-networking#vlan
 - https://linux-blog.anracom.com/2017/11/14/fun-with-veth-devices-linux-bridges-and-vlans-in-unnamed-linux-network-namespaces-iii/
+- https://linux-blog.anracom.com/2017/11/28/fun-with-veth-devices-linux-bridges-and-vlans-in-unnamed-linux-network-namespaces-vi/
