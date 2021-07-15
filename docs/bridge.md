@@ -56,9 +56,7 @@ ip link set eth0 master br0
 # 물리 링크 IP 설정 br0 로 변경 설정
 ip addr del 192.168.10.25/24 dev eth0
 ip addr add 192.168.10.25/24 dev br0
-
-ip r add default 192.168.10.0/24 dev br0
-ip r add 192.168.10.0/24 via 192.168.10.1
+ip route add default via 192.168.0.1
 
 # 확인
 brctl show br0
