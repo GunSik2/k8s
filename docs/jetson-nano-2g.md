@@ -3,7 +3,7 @@
 ## 설치
 
 ### SD 카드 이미지 설치 
-- 이미지([Jetson Nano 2GB Developer Kit SD Card Image](https://developer.nvidia.com/jetson-nano-2gb-sd-card-image)) 다운로드 및 설치
+- 이미지([Jetson Nano 2GB Developer Kit SD Card Image](https://developer.nvidia.com/jetson-nano-2gb-jp441-sd-card-image)) 다운로드 및 설치
 - SD Card Formatter](https://www.sdcard.org/downloads/formatter/sd-memory-card-formatter-for-windows-download/) 다운로드 및 설치
 - [Etcher](https://www.balena.io/etcher/) 다운로드
 - SD 카드 넣고 SD Card Formatter 실행한 후 Quick Format 포맷 진행
