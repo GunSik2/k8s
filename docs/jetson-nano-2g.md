@@ -114,7 +114,13 @@ Result = PASS
 permissions=  # remove values of permissions
 ```
 
-
+### 트러블슈팅
+- [Load jetson 4.5 error](https://forums.developer.nvidia.com/t/full-wipe-load-jetpack-4-5-errors/166629)
+  -  JetPack4.4.1 이미지 사용하여 진행 필요
+```
+# ./docker_dli_run.sh 
+docker: Error response from daemon: OCI runtime create failed: container_linux.go:349: starting container process caused "process_linux.go:449: container init caused \"process_linux.go:432: running prestart hook 0 caused \\\"error running hook: exit status 1, stdout: , stderr: exec command: [/usr/bin/nvidia-container-cli --load-kmods configure --ldconfig=@/sbin/ldconfig.real --device=all --compute --compat32 --graphics --utility --video --display --pid=27601 /var/lib/docker/overlay2/00eb3e443a711b4a767f70a19fa1fb7310910f991c86459af83b98d8f6e5444f/merged]\\\\nnvidia-container-cli: mount error: file creation failed: /var/lib/docker/overlay2/00eb3e443a711b4a767f70a19fa1fb7310910f991c86459af83b98d8f6e5444f/merged/usr/lib/aarch64-linux-gnu/libnvidia-fatbinaryloader.so.440.18: file exists\\\\n\\\"\"": unknown.
+```
 
 ## 참고자료
 - [Jetson 설치 가이드](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-2gb-devkit)
