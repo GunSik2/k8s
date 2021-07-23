@@ -7,13 +7,15 @@
 - (2nd, Middle) DHT11/22 Sensor Signal to Raspberry Pi PIN 7 (GPIO PIN 4)
 - (3rd, Rigth) DHT11/22 Sensor GND to Raspberry Pi GND
 
-## Python
+## 코드 테스트
 - package installation
 ```
 sudo apt-get install python3-dev python3-pip
 sudo python3 -m pip install --upgrade pip setuptools wheel
+
+pip3 install Adafruit_DHT
 ```
-- python program
+- dht11.py
 ```
 import Adafruit_DHT
 import time
@@ -27,7 +29,44 @@ while True:
         print("Temp={0:0.1f}C Humidity={1:0.1f}%".format(temperature, humidity))
     else:
         print("Sensor failure. Check wiring.");
-    time.sleep(3);
+    time.sleep(3);    
+```
+
+## PI Deployment 배포
+- Dockerfile
+```
+FROM python:3
+
+ADD blink.py /
+
+RUN pip install gpiozero
+RUN pip install Adafruit_DHT
+
+CMD [ "python3" , "./dht11.py" ]
+```
+- Build
+```
+docker buildx build --push --platform linux/amd64,linux/arm64 -t cgshome2/rpi-dht11 .
+```
+- Deploy
+```
+$ cat dht11.yml
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rpi-dht11
+spec:
+  containers:
+    - name: rpi-dht11
+      image: cgshome2/rpi-dht11 
+      securityContext:
+        privileged: true
+  nodeSelector:
+    kubernetes.io/arch: arm64
+---
+
+$ kubectl apply -f blnik.yml
 ```
 
 ## 참고
