@@ -124,6 +124,10 @@ k3os:
     - "--node-external-ip=10.0.1.10"    
 # k3os cfg --dump    
 
+# k3os config --install
+
+# tail -f /var/log/k3s-service.log
+
 # cat /var/lib/connman/ethernet_52540071ce88_cable/settings 
 [ethernet_52540071ce88_cable]
 Name=Wired
@@ -209,3 +213,4 @@ port no	mac addr		is local?	ageing timer
 - [k3os Networking Setup](https://betterprogramming.pub/k3s-k3os-kubernetes-docker-containers-installation-setup-cluster-ee9ccfd51a4d)
 - [ConnMan](https://www.embeddedcomputing.com/technology/security/network-security/the-connman)
 - [Nic1](https://github.com/rancher/k3os/issues/703) [bridge 예시](https://www.sauru.so/blog/troubleshooting-w-linux-bridge/)
+- [k3os install on Linux](https://sj14.gitlab.io/post/2021/01-30-free-k8s-cloud-cluster/)
