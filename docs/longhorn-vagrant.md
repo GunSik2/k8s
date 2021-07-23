@@ -34,6 +34,15 @@ kubectl get pods --namespace longhorn-system --watch
 helm uninstall longhorn ./longhorn/chart/ --namespace longhorn-system
 ```
 
+## helm 바로 설치
+```
+helm repo add longhorn https://charts.longhorn.io
+helm repo update
+kubectl create namespace longhorn-system
+helm install longhorn longhorn/longhorn --namespace longhorn-system
+kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}' # remove local-path as default provisioner
+```
 ## 참고
 - https://longhorn.io/docs/0.8.0/install/requirements/
 - https://kubernetes.io/ko/docs/reference/kubectl/cheatsheet/
+- https://sj14.gitlab.io/post/2021/01-30-free-k8s-cloud-cluster/
