@@ -126,3 +126,4 @@ docker: Error response from daemon: OCI runtime create failed: container_linux.g
 - [Jetson 설치 가이드](https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-2gb-devkit)
 - [Jetson AI Certification](https://developer.nvidia.com/embedded/learn/jetson-ai-certification-programs)
 - [Running k3s, Ligthweigth Kubernetes on NV Jetson cluster](https://www.hackster.io/WhoseAI/running-k3s-lightweight-kubernetes-on-nv-jetson-cluster-93e577)
+- [Run an Edge AI K3s Cluster on NVIDIA Jetson Nano Boards](https://www.suse.com/c/running-edge-artificial-intelligence-k3s-cluster-with-nvidia-jetson-nano-boards-src/)
