@@ -1,7 +1,7 @@
 
 # K3s with Jetson
 
-## 빌드/테스트
+## Jetson 이미지 테스트
 - Jetson GPU 쿼리 이미지 생성 및 테스트
 ```
 cp /usr/local/cuda/samples/ . -r
@@ -27,6 +27,27 @@ sudo docker push cgshome2/jetson_devicequery:32.5
 ctr i pull docker.io/cgshome2/jetson_devicequery:32.5
 sudo ctr run --rm --gpus 0 --tty  docker.io/cgshome2/jetson_devicequery:32.5 deviceQuery
 ```
+
+## K3S 배포
+```
+cat pod_deviceQuery.yml 
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devicequery
+spec:
+  nodeName: jetson
+  containers:
+  - name: nvidia
+    image: cgshome2/jetson_devicequery:32.5
+    command: [ "./deviceQuery" ]
+---
+sudo kubectl apply -f pod_deviceQuery.yml 
+kubectl describe pod devicequery
+kubectl logs devicequery
+```
+
 
 ## 참고
 - [Run an Edge AI K3s Cluster on NVIDIA Jetson Nano Boards](https://www.suse.com/c/running-edge-artificial-intelligence-k3s-cluster-with-nvidia-jetson-nano-boards-src/)
