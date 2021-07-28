@@ -71,3 +71,4 @@ $ kubectl apply -f blnik.yml
 
 ## 참고
 - https://www.thegeekpub.com/236867/using-the-dht11-temperature-sensor-with-the-raspberry-pi/
+- https://forum.dexterindustries.com/t/solved-dht-sensor-occasionally-returning-spurious-values/2939/5
