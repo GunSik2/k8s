@@ -47,6 +47,8 @@ CMD [ "python3" , "./dht11.py" ]
 - Build
 ```
 docker build -t cgshome2/rpi-dht11 .
+docker login
+docker push cgshome2/rpi-dht11 
 ```
 - Deploy
 ```
