@@ -37,16 +37,16 @@ while True:
 ```
 FROM python:3
 
-ADD blink.py /
+ADD dht22.py /
 
-RUN pip install gpiozero
 RUN pip install Adafruit_DHT
 
 CMD [ "python3" , "./dht11.py" ]
 ```
+
 - Build
 ```
-docker buildx build --push --platform linux/amd64,linux/arm64 -t cgshome2/rpi-dht11 .
+docker build -t cgshome2/rpi-dht11 .
 ```
 - Deploy
 ```
@@ -66,7 +66,7 @@ spec:
     kubernetes.io/arch: arm64
 ---
 
-$ kubectl apply -f blnik.yml
+$ kubectl apply -f dht11.yml
 ```
 
 ## 참고
