@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rpi-dht22
+spec:
+  containers:
+    - name: dht22
+      image: cgshome2/rpi-dht22
+      securityContext:
+        privileged: true
+  nodeSelector:
+    kubernetes.io/arch: arm64
