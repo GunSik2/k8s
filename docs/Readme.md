@@ -23,3 +23,6 @@
 
 ## RKE2
 - [RKE2 experimet](/docs/rke2.md)
+
+## Etc
+- [trivy](/docs/trivy.md)
