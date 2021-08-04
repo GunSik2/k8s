@@ -20,3 +20,6 @@
 
 ## KubeVirt
 - [Kubevirt network](/docs/kubevirt-network.md)
+
+## RKE2
+- [RKE2 experimet](/docs/rke2.md)
