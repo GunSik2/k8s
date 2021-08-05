@@ -110,8 +110,31 @@ docker run -it --rm \
 ```
 - Check cluster status
 ```
-docker exec -ti pg-0 bash
-# /opt/bitnami/scripts/postgresql-repmgr/entrypoint.sh repmgr -f /opt/bitnami/postgresql/conf/postgresql.conf service status
+docker exec -it pg-0 bash
+# /opt/bitnami/scripts/postgresql-repmgr/entrypoint.sh repmgr -f /opt/bitnami/repmgr/conf/repmgr.conf cluster show
+
+ ID   | Name | Role    | Status    | Upstream | Location | Priority | Timeline | Connection string                                                                  
+------+------+---------+-----------+----------+----------+----------+----------+-------------------------------------------------------------------------------------
+ 1000 | pg-0 | primary | * running |          | default  | 100      | 1        | user=repmgr password=repmgrpass host=pg-0 dbname=repmgr port=5432 connect_timeout=5
+ 1001 | pg-1 | standby |   running | pg-0     | default  | 100      | 1        | user=repmgr password=repmgrpass host=pg-1 dbname=repmgr port=5432 connect_timeout=5
+
+#/opt/bitnami/scripts/postgresql-repmgr/entrypoint.sh repmgr -f /opt/bitnami/repmgr/conf/repmgr.conf service status
+
+ ID | Name | Role    | Status    | Upstream | repmgrd | PID | Paused? | Upstream last seen
+----+------+---------+-----------+----------+---------+-----+---------+--------------------
+ 1000 | pg-0 | primary | * running |          | running | 1   | no      | n/a                
+ 1001 | pg-1 | standby |   running | pg-0     | running | 1   | no      | 0 second(s) ago 
+ 
+ # psql -U postgres
+ password: secretpass
+ postgres=# \l
+ postgres=# \c kine
+ kine=# \dt
+         List of relations
+ Schema | Name | Type  |  Owner   
+--------+------+-------+----------
+ public | kine | table | postgres
+kine=# \d kine
 ```
 
 ## K3s modification
@@ -162,3 +185,4 @@ docker run \
 - https://github.com/bitnami/bitnami-docker-postgresql-repmgr
 - https://github.com/osixia/docker-keepalived
 - https://github.com/containerd/nerdctl
+- https://repmgr.org/docs/current/index.html
