@@ -23,6 +23,21 @@ This should allow cluster to be accessible even if the primary node fails
 
 ![image](https://user-images.githubusercontent.com/11453229/128290681-2d4f79da-bd7e-4372-a14b-ff764210ff28.png)
 
+## Run
+- master node
+```
+sudo su -
+apt  install  net-tools docker.io -y
+wget https://raw.githubusercontent.com/GunSik2/k8s/main/install/k3s-ha.sh
+. k3s-ha.sh 192.168.0.3 192.168.0.9 192.168.0.11 MASTER
+```
+- backup node
+```
+sudo su -
+apt  install  net-tools docker.io -y
+wget https://raw.githubusercontent.com/GunSik2/k8s/main/install/k3s-ha.sh
+. k3s-ha.sh 192.168.0.3 192.168.0.9 192.168.0.11 BACKUP
+```
 ## Script Code
 - PosgreSQL HA
 ```
