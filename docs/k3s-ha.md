@@ -93,6 +93,13 @@ $ docker run -it --rm \
 ```
 
 ## K3s modification
+### k3s no start
+- k3s 설치만 먼저, 기동은 하지 않고
+```
+curl -sfL https://get.k3s.io | INSTALL_K3S_SKIP_START=false sh -
+```
+
+### keepalived
 - k3s 는 containerd 기반 실행
 - containerd 기본 cli 인 ctr 은 docker 와 명령체계가 상이함
 - containerd 와 호환되며 docker와 명령체계가 유사한 nerdctl 을 사용하여 실행
@@ -125,6 +132,8 @@ docker run \
   --restart always \
   -d osixia/keepalived:2.0.20
 ```
+
+
 
 ## Reference
 - https://github.com/ibrokethecloud/k3s-ha
