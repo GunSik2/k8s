@@ -60,6 +60,7 @@ fi
 ```
 
 - Keepalived
+  :  require the kernel module ip_vs loaded on the host (modprobe ip_vs) 
 ```
 echo "firing up keepalived"
 docker run \
@@ -94,3 +95,4 @@ $ docker run -it --rm \
 ## Reference
 - https://github.com/ibrokethecloud/k3s-ha
 - https://github.com/bitnami/bitnami-docker-postgresql-repmgr
+- https://github.com/osixia/docker-keepalived
