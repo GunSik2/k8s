@@ -1,6 +1,5 @@
 # K8S, K3s 
 
-
 ## Rasberry Pi 
 - [Rasberry Pi + Ubuntu 20.04](/docs/raspberrypi.md)
 - [k3s server 설치](/docs/k3s.md)
@@ -10,6 +9,7 @@
 ## Jetson Nano
 - [Jetson Nano 2G + Developer Kit](/docs/jetson-nano-2g.md)
 - [k3s agent 설치](/docs/k3s.md)
+- [k3s HA 설치](/docs/k3s-ha.md)
 
 
 ## Harvester 
@@ -26,3 +26,6 @@
 
 ## Etc
 - [trivy](/docs/trivy.md)
+
+## Catalog
+- [PosgreSQL HA_with Patroni](https://github.com/zalando/postgres-operator) [Google Cloud 적용](https://cloud.google.com/architecture/architectures-high-availability-postgresql-clusters-compute-engine)
