@@ -92,6 +92,34 @@ $ docker run -it --rm \
   psql -h pg-0 -U postgres
 ```
 
+## K3s modification
+- k3s 는 containerd 기반 실행
+- containerd 기본 cli 인 ctr 은 docker 와 명령체계가 상이함
+- containerd 와 호환되며 docker와 명령체계가 유사한 nerdctl 을 사용하여 실행
+- k3s 환경은 기본 containerd 와 상이한 설정이 있으므로 nerdctl 명령 실행 시 부가 옵션 설정 필요
+- (--address /run/k3s/containerd/containerd.sock --namespace k8s.io)
+- 업데이트한 keepalived 배포 스크립트
+```
+NODE1=192.168.0.19
+NODE2=192.168.0.25
+DEFAULT_IF=enp1s0
+VIRTUAL_IP=192.168.0.49
+ROLE=MASTER  #/BACKUP
+
+nerdctl --address /run/k3s/containerd/containerd.sock --namespace k8s.io run \
+  --cap-add=NET_ADMIN \
+  --cap-add=NET_BROADCAST \
+  --cap-add=NET_RAW \
+  --net=host \
+  --env KEEPALIVED_INTERFACE=$DEFAULT_IF \
+  --env KEEPALIVED_UNICAST_PEERS="#PYTHON2BASH:[$NODE1, $NODE2]" \
+  --env KEEPALIVED_STATE=$ROLE \
+  --env KEEPALIVED_VIRTUAL_IPS=$VIRTUAL_IP \
+  --name vip \
+  --restart always \
+  -d osixia/keepalived:2.0.20
+```
+
 ## Reference
 - https://github.com/ibrokethecloud/k3s-ha
 - https://github.com/bitnami/bitnami-docker-postgresql-repmgr
