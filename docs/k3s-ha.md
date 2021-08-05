@@ -92,7 +92,11 @@ docker run -it --rm \
   --add-host pg-0:${NODE1} \
   bitnami/postgresql:10 \
   psql -h pg-0 -U postgres 
-
+```
+- Check cluster status
+```
+docker exec -ti pg-0 bash
+# /opt/bitnami/scripts/postgresql-repmgr/entrypoint.sh repmgr -f /opt/bitnami/postgresql/conf/postgresql.conf service status
 ```
 
 ## K3s modification
