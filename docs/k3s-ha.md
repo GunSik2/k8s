@@ -86,10 +86,13 @@ curl -sfL https://get.k3s.io | sh -s - server --tls-san $VIRTUAL_IP \
 
 - PostgreSQL Client 
 ```
-$ docker run -it --rm \
-  --network host \
+NODE1=192.168.0.19
+
+docker run -it --rm \
+  --add-host pg-0:${NODE1} \
   bitnami/postgresql:10 \
-  psql -h pg-0 -U postgres
+  psql -h pg-0 -U postgres 
+
 ```
 
 ## K3s modification
