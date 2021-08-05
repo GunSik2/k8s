@@ -99,15 +99,6 @@ curl -sfL https://get.k3s.io | sh -s - server --tls-san $VIRTUAL_IP \
   --datastore-endpoint="postgres://postgres:secretpass@$VIRTUAL_IP:5432/kine?sslmode=disable" 
 ```
 
-- PostgreSQL Client 
-```
-NODE1=192.168.0.19
-
-docker run -it --rm \
-  --add-host pg-0:${NODE1} \
-  bitnami/postgresql:10 \
-  psql -h pg-0 -U postgres 
-```
 - Check cluster status
 ```
 docker exec -it pg-0 bash
