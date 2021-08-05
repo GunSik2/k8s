@@ -98,6 +98,10 @@ $ docker run -it --rm \
 - containerd 와 호환되며 docker와 명령체계가 유사한 nerdctl 을 사용하여 실행
 - k3s 환경은 기본 containerd 와 상이한 설정이 있으므로 nerdctl 명령 실행 시 부가 옵션 설정 필요
 - (--address /run/k3s/containerd/containerd.sock --namespace k8s.io)
+- nerdctl 설치
+```
+wget -c https://github.com/containerd/nerdctl/releases/download/v0.11.0/nerdctl-0.11.0-linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local/bin/
+```
 - 업데이트한 keepalived 배포 스크립트
 ```
 NODE1=192.168.0.19
@@ -106,7 +110,9 @@ DEFAULT_IF=enp1s0
 VIRTUAL_IP=192.168.0.49
 ROLE=MASTER  #/BACKUP
 
-nerdctl --address /run/k3s/containerd/containerd.sock --namespace k8s.io run \
+alias docker="nerdctl --address /run/k3s/containerd/containerd.sock --namespace k8s.io"
+
+docker run \
   --cap-add=NET_ADMIN \
   --cap-add=NET_BROADCAST \
   --cap-add=NET_RAW \
@@ -124,3 +130,4 @@ nerdctl --address /run/k3s/containerd/containerd.sock --namespace k8s.io run \
 - https://github.com/ibrokethecloud/k3s-ha
 - https://github.com/bitnami/bitnami-docker-postgresql-repmgr
 - https://github.com/osixia/docker-keepalived
+- https://github.com/containerd/nerdctl
