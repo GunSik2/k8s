@@ -17,18 +17,25 @@ pip3 install Adafruit_DHT
 ```
 - dht11.py
 ```
+#!/usr/bin/env python3
+
 import Adafruit_DHT
 import time
  
 DHT_SENSOR = Adafruit_DHT.DHT11
 DHT_PIN = 4
  
-while True:
+def get_temperature_readings():
     humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT_PIN)
     if humidity is not None and temperature is not None:
-        print("Temp={0:0.1f}C Humidity={1:0.1f}%".format(temperature, humidity))
+        humidity = format(humidity, ".2f") + "%"
+        temperature = format(temperature, ".2f") + "C"
+        return  {"temperature": temperature, "humidity": humidity} 
     else:
-        print("Sensor failure. Check wiring.");
+        print {"Sensor failure. Check wiring."}
+
+while True:
+    print(get_temperature_readings())
     time.sleep(3);    
 ```
 
