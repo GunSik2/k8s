@@ -57,6 +57,7 @@ longhorn:
 ```
 helm install harvester ./harvester --namespace harvester-system --set service.harvester.type=NodePort
 ```
+## Harvester-UI
 
 
 ## Rancher
@@ -96,3 +97,4 @@ kubectl get pods -A
 - https://docs.rke2.io/install/quickstart/
 - https://github.com/harvester/harvester/blob/master/deploy/charts/harvester/README.md
 - https://blogs.aca-it.be/how-to-install-rancher-rke2-on-centos-stream-8/
+- https://github.com/harvester/harvester-ui
