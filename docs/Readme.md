@@ -26,6 +26,9 @@
 
 ## Etc
 - [trivy](/docs/trivy.md)
+- [k3s + faas](https://bee42.com/de/blog/tutorials/kubernetes-on-silicon-preview/)
 
 ## Catalog
-- [PosgreSQL HA_with Patroni](https://github.com/zalando/postgres-operator) [Google Cloud 적용](https://cloud.google.com/architecture/architectures-high-availability-postgresql-clusters-compute-engine)
+- [PosgreSQL HA_with Patroni](https://github.com/zalando/postgres-operator) 
+- [Google Cloud 적용](https://cloud.google.com/architecture/architectures-high-availability-postgresql-clusters-compute-engine)
+- [Percona PostgreSQL HA](https://www.percona.com/doc/kubernetes-operator-for-postgresql/index.html)
