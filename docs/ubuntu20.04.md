@@ -98,3 +98,4 @@ kubectl get pods -A
 - https://github.com/harvester/harvester/blob/master/deploy/charts/harvester/README.md
 - https://blogs.aca-it.be/how-to-install-rancher-rke2-on-centos-stream-8/
 - https://github.com/harvester/harvester-ui
+- https://docs.harvesterhci.io/v0.2/dev/dev-mode/
