@@ -10,7 +10,7 @@ metadata:
   name: coredns-custom  
   namespace: kube-system 
 data:
-  example.db: |
+  example.server: |
     ; example.org test file
     example.org.            IN      SOA     sns.dns.icann.org. noc.dns.icann.org. 2015082541 7200 3600 1209600 3600
     example.org.            IN      NS      b.iana-servers.net.
