@@ -100,6 +100,11 @@ kubectl get pods -A
 ```
 sudo apt-get install -y open-iscsi
 ```
+- Longhorn UI 오픈
+```
+kubectl expose deployment longhorn-ui --namespace=longhorn-system --type=NodePort --name=longhorn-ui
+kubectl describe service longhorn-ui --namespace=longhorn-system
+```
 
 
 ## Reference
