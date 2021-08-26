@@ -66,7 +66,9 @@ helm install harvester ./harvester --namespace harvester-system --set service.ha
 helm repo add rancher-stable https://releases.rancher.com/server-charts/stable
 kubectl create namespace cattle-system
 ```
-- cert-manager
+- cert-manager 
+  We will be using self-signed certificates for now. The cert-manager tool can generate these automatically. 
+  Note: if you bring your own certificates, this step is not required.
 ```
 kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v1.0.4/cert-manager.crds.yaml
 kubectl create namespace cert-manager
