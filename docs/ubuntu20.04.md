@@ -94,6 +94,13 @@ helm upgrade --install rancher rancher-stable/rancher \
 kubectl get pods -A  
 ```
 
+## longhorn
+- Rancher 카탈로그에서 실행 vs Helm chart 직접 설치
+- Error(iscsiadm/open-iscsi is missing) 발생시 호스트 실행 
+```
+sudo apt-get install -y open-iscsi
+```
+
 
 ## Reference
 - https://docs.rke2.io/install/quickstart/
