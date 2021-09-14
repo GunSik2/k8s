@@ -32,6 +32,10 @@ kubectl get nodes
 kubectl get pods --all-namespaces
 helm ls --all-namespaces
 ```
+- Remove RKE2
+```
+rke2-uninstall.sh
+```
 ## Harvester
 - Prepare
 ```
