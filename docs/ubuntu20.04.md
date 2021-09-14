@@ -61,6 +61,7 @@ longhorn:
 ```
 helm install harvester ./harvester --namespace harvester-system --set service.harvester.type=NodePort
 ```
+
 ## Harvester-UI
 
 
@@ -110,6 +111,8 @@ kubectl expose deployment longhorn-ui --namespace=longhorn-system --type=NodePor
 kubectl describe service longhorn-ui --namespace=longhorn-system
 ```
 
+## ngrok 
+- https://github.com/GunSik2/k8s-ai/issues/2
 
 ## Reference
 - https://docs.rke2.io/install/quickstart/
